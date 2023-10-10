@@ -3,5 +3,9 @@
 
 import requests
 import json
-res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "gmaVsowZsITzZGWKQjQ3sQ", "isbns": "0743269268"})
+
+print("¿Qué libro estas buscando?")
+ISBN = input()
+
+res = requests.get(f"https://www.goodreads.com/book/review_counts.json", params={"key": "gmaVsowZsITzZGWKQjQ3sQ", "isbns": "{ISBN}"})
 print(res)
