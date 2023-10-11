@@ -166,16 +166,36 @@ while totalPuntos != 0 or totalPuntos < 0:
         if diccionarioCaracteristicas['carisma'] == 14:
             totalPuntos -= 7
         if diccionarioCaracteristicas['carisma'] == 15:
-            totalPuntos -= 9                             
-    
+            totalPuntos -= 9 
 
 print("Te has quedado sin puntos")
 print("Tus estadisticas son: ")
 print('****************************')
 print('')
-print('FUERZA: '+ str(diccionarioCaracteristicas['fuerza']))
-print('DESTREZA: '+ str(diccionarioCaracteristicas['destreza']))
-print('INTELIGENCIA: '+ str(diccionarioCaracteristicas['inteligencia']))
+if razaseleccionada.lower() == "dragonborn": 
+    print('FUERZA: '+ str(diccionarioCaracteristicas['fuerza']+ 2))
+elif razaseleccionada.lower() == "dwarf" or razaseleccionada.lower() == "tiefling":
+    print('FUERZA: '+ str(diccionarioCaracteristicas['fuerza'] + 1))
+else:
+    print('FUERZA: '+ str(diccionarioCaracteristicas['fuerza']))  
+    
+    
+if razaseleccionada.lower() == "elf":
+    print('DESTREZA: ' + str(diccionarioCaracteristicas['destreza'] + 2))
+elif razaseleccionada.lower() == "gnome":
+    print('DESTREZA: ' + str(diccionarioCaracteristicas['destreza'] + 1))
+else:
+    print('DESTREZA: ' + str(diccionarioCaracteristicas['destreza']))
+    
+    
+if razaseleccionada.lower() == "gnome":
+    print('INTELIGENCIA: ' + str(diccionarioCaracteristicas['inteligencia'] + 2))
+elif razaseleccionada.lower() == "half-elf":
+    print('INTELIGENCIA: ' + str(diccionarioCaracteristicas['inteligencia'] + 1))
+else:
+    print('INTELIGENCIA: ' + str(diccionarioCaracteristicas['inteligencia']))    
+
+
 print('SABIDURIA: '+ str(diccionarioCaracteristicas['sabiduria']))
 print('CARISMA: '+ str(diccionarioCaracteristicas['carisma']))
 print('CONSTITUCIÓN: '+ str(diccionarioCaracteristicas['constitución']))
