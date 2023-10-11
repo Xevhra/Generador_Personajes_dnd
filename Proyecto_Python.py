@@ -31,7 +31,6 @@ if razasdata.status_code == 200:
         print(' ' + e['index'])
 
     razaseleccionada = input('Elija su raza: ')
-
     
 # Aqui elegiremos la clase
 
@@ -53,19 +52,37 @@ print('Su personaje es: ', nombre," el ", claseseleccionada, " ", razaselecciona
 # Es decir, se te asigna un total de puntos
 # con el cual comprar el valor de tus estadisticas
 
+# Creamos un diccionario que almacena las caracteristicas
+
 totalPuntos = 27
-caracteristicaInicial = 8
-fuerza = caracteristicaInicial
-destreza = caracteristicaInicial
-constitución = caracteristicaInicial
-inteligencia = caracteristicaInicial
-sabiduria = caracteristicaInicial
-carisma = caracteristicaInicial  
+diccionarioCaracteristicas = {
+    "fuerza": 8,
+    "destreza": 8,
+    "inteligencia": 8,
+    "sabiduria": 8,
+    "constitución": 8,
+    "carisma": 8
+}
 
-
+# Aquí se calculan los puntos
 
 while totalPuntos != 0:
-    print("Contador:", totalPuntos)
+    print("Aquí está tu total de puntos:", totalPuntos)
+    print("para construir tu personaje tendras que asignarle estadisticas")
+    print("Puedes elegir entre: Fuerza, Destreza, Inteligencia, Sabiduria, Constitución, Carisma")
+    print('¿En qué quieres gastartelos?')
+    compra = input()
+    if compra.lower() == 'fuerza':
+        diccionarioCaracteristicas['fuerza'] = diccionarioCaracteristicas['fuerza'] + 1
+        if diccionarioCaracteristicas['fuerza'] ==
     totalPuntos -= 1
 
 print("Te has quedado sin puntos")
+print("Tus estadisticas son: ")
+print('****************************')
+print('FUERZA: '+ str(diccionarioCaracteristicas['fuerza']))
+print('DESTREZA: '+ str(diccionarioCaracteristicas['destreza']))
+print('INTELIGENCIA: '+ str(diccionarioCaracteristicas['inteligencia']))
+print('SABIDURIA: '+ str(diccionarioCaracteristicas['sabiduria']))
+print('CARISMA: '+ str(diccionarioCaracteristicas['carisma']))
+print('CONSTITUCIÓN: '+ str(diccionarioCaracteristicas['constitución']))
