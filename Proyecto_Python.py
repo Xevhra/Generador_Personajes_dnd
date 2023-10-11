@@ -1,4 +1,4 @@
-#!/usr/bin/python3Al
+#!/usr/bin/python3
 
 # La idea es realizar una aplicación que te monte un personaje de DnD
 # en base a tu selección
