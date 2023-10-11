@@ -32,6 +32,8 @@ if razasdata.status_code == 200:
 
     razaseleccionada = input('Elija su raza: ')
     
+
+    
 # Aqui elegiremos la clase
 
 print('****************************')
@@ -45,6 +47,8 @@ if clasesdata.status_code == 200:
     claseseleccionada = input('Elija su clase: ')
     
 # Output de la clase
+
+
 print('Su personaje es: ', nombre," el ", claseseleccionada, " ", razaseleccionada )
 print('****************************')     
 
