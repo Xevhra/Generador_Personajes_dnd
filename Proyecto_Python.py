@@ -97,7 +97,7 @@ while totalPuntos > 0:
 print('')
 print('****************************')
 print("Te has quedado sin puntos")
-print("Tus estadisticas son (Bufos raciales añadidos): ")
+print(print('Los puntos de habilidad de : ', nombre," el ", claseseleccionada, " ", razaseleccionada , " son:"))
 print('')
 print('****************************')
 print('')
@@ -212,4 +212,7 @@ def tirar_dado(caras):
 
 # Calculo
 puntosDeGolpe = tirar_dado(caras) + modificador_constitucion
-print("Tus puntos de golpe son: ", puntosDeGolpe)    
+print("Tus puntos de golpe son: ", puntosDeGolpe)
+
+
+    
