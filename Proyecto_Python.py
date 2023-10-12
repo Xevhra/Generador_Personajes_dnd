@@ -5,6 +5,7 @@
 
 import requests
 import json
+import random
 
 # Aqui importaremos la api de la clase que seleccionas
 
@@ -171,6 +172,7 @@ print('')
 print('****************************')
 print("Te has quedado sin puntos")
 print("Tus estadisticas son (Bufos raciales añadidos): ")
+print('')
 print('****************************')
 print('')
 if razaseleccionada.lower() == "dragonborn": 
@@ -216,3 +218,72 @@ else:
     print('CONSTITUCIÓN: '+ str(diccionarioCaracteristicas['constitución']))
 print('')
 print('****************************')
+
+# A continuación calcularemos los puntos de salud
+# y la clase de armadura, para ello, lo primero que debemos
+# hacer es obtener los modificadores de las estadisticas
+# para ello, haremos uso de una función que obtenga
+# la caracteristica y aplique las normas oficiales de
+# DnD (Se restan 10, y luego se divide entre 2)
+
+def calcular_modificador(estadistica):
+     return (estadistica - 10) // 2
+
+
+modificador_fuerza = calcular_modificador(diccionarioCaracteristicas['fuerza'])
+modificador_destreza = calcular_modificador(diccionarioCaracteristicas['destreza'])
+modificador_inteligencia = calcular_modificador(diccionarioCaracteristicas['inteligencia'])
+modificador_sabiduria = calcular_modificador(diccionarioCaracteristicas['sabiduria'])
+modificador_constitucion = calcular_modificador(diccionarioCaracteristicas['constitución'])
+modificador_carisma = calcular_modificador(diccionarioCaracteristicas['carisma'])
+
+print('Modificadores de Estadísticas:')
+print(f'Fuerza: {modificador_fuerza}')
+print(f'Destreza: {modificador_destreza}')
+print(f'Inteligencia: {modificador_inteligencia}')
+print(f'Sabiduría: {modificador_sabiduria}')
+print(f'Constitución: {modificador_constitucion}')
+print(f'Carisma: {modificador_carisma}')
+
+print('')
+print('****************************')
+print('')
+
+# Aquí se calculan los puntos de salud
+# Para ello, obtendremos los dados de golpe
+# de cada clase, usaremos una función para
+# simular el lanzamiento de dado
+
+if claseseleccionada == "barbarian":
+    caras = 12
+elif claseseleccionada == "bard":
+    caras = 8
+elif claseseleccionada == "cleric":
+    caras = 8
+elif claseseleccionada == "druid":
+    caras = 8
+elif claseseleccionada == "fighter":
+    caras = 10
+elif claseseleccionada == "monk":
+    caras = 8                                
+elif claseseleccionada == "paladin":
+    caras = 10
+elif claseseleccionada == "ranger":
+    caras = 10
+elif claseseleccionada == "rogue":
+    caras = 8
+elif claseseleccionada == "sorcerer":  
+    caras = 6
+elif claseseleccionada == "warlock":
+    caras = 8 
+else:
+    caras = 6
+    
+                    
+def tirar_dado(caras):
+    resultado = random.randint(1, caras)
+    return resultado
+
+# Calculo
+puntosDeGolpe = tirar_dado(caras) + modificador_constitucion
+print("Tus puntos de golpe son: ", puntosDeGolpe)    
