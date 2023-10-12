@@ -72,102 +72,28 @@ diccionarioCaracteristicas = {
 
 # Aquí se calculan los puntos
 
-while totalPuntos != 0 or totalPuntos < 0:
+while totalPuntos > 0:
     print("Aquí está tu total de puntos:", totalPuntos)
-    print("para construir tu personaje tendras que asignarle estadisticas")
-    print("Puedes elegir entre: Fuerza, Destreza, Inteligencia, Sabiduria, Constitución, Carisma")
-    print('¿En qué quieres gastartelos?')
+    print("Para construir tu personaje tendrás que asignarle estadísticas")
+    print("Puedes elegir entre: Fuerza, Destreza, Inteligencia, Sabiduría, Constitución, Carisma")
+    print('¿En qué quieres gastarlos?')
     compra = input()
-    if compra.lower() == 'fuerza':
-        diccionarioCaracteristicas['fuerza'] = diccionarioCaracteristicas['fuerza'] + 1
-        totalPuntos -=1
-        if diccionarioCaracteristicas['fuerza'] == 10:
-            totalPuntos -=2
-        if diccionarioCaracteristicas['fuerza'] == 11:
-            totalPuntos -=3 
-        if diccionarioCaracteristicas['fuerza'] == 12:
-            totalPuntos -=4
-        if diccionarioCaracteristicas['fuerza'] == 13:
-            totalPuntos -=5
-        if diccionarioCaracteristicas['fuerza'] == 14:
-            totalPuntos -=7
-        if diccionarioCaracteristicas['fuerza'] == 15:
-            totalPuntos -=9
-    if compra.lower() == 'destreza':
-        diccionarioCaracteristicas['destreza'] = diccionarioCaracteristicas['destreza'] + 1
-        totalPuntos -=1
-        if diccionarioCaracteristicas['destreza'] == 10:
-            totalPuntos -=2
-        if diccionarioCaracteristicas['destreza'] == 11:
-            totalPuntos -=3 
-        if diccionarioCaracteristicas['destreza'] == 12:
-            totalPuntos -=4
-        if diccionarioCaracteristicas['destreza'] == 13:
-            totalPuntos -=5
-        if diccionarioCaracteristicas['destreza'] == 14:
-            totalPuntos -=7
-        if diccionarioCaracteristicas['destreza'] == 15:
-            totalPuntos -=9    
-    if compra.lower() == 'sabiduría':
-        diccionarioCaracteristicas['sabiduría'] = diccionarioCaracteristicas['sabiduría'] + 1
-        totalPuntos -=1
-        if diccionarioCaracteristicas['sabiduría'] == 10:
-            totalPuntos -= 2
-        if diccionarioCaracteristicas['sabiduría'] == 11:
-            totalPuntos -= 3 
-        if diccionarioCaracteristicas['sabiduría'] == 12:
-            totalPuntos -= 4
-        if diccionarioCaracteristicas['sabiduría'] == 13:
-            totalPuntos -= 5
-        if diccionarioCaracteristicas['sabiduría'] == 14:
-            totalPuntos -= 7
-        if diccionarioCaracteristicas['sabiduría'] == 15:
-            totalPuntos -= 9
-    if compra.lower() == 'inteligencia':
-        diccionarioCaracteristicas['inteligencia'] = diccionarioCaracteristicas['inteligencia'] + 1
-        totalPuntos -=1
-        if diccionarioCaracteristicas['inteligencia'] == 10:
-            totalPuntos -= 2
-        if diccionarioCaracteristicas['inteligencia'] == 11:
-            totalPuntos -= 3 
-        if diccionarioCaracteristicas['inteligencia'] == 12:
-            totalPuntos -= 4
-        if diccionarioCaracteristicas['inteligencia'] == 13:
-            totalPuntos -= 5
-        if diccionarioCaracteristicas['inteligencia'] == 14:
-            totalPuntos -= 7
-        if diccionarioCaracteristicas['inteligencia'] == 15:
-            totalPuntos -= 9
-    if compra.lower() == 'constitución':
-        diccionarioCaracteristicas['constitución'] = diccionarioCaracteristicas['inteligencia'] + 1
-        totalPuntos -=1
-        if diccionarioCaracteristicas['constitución'] == 10:
-            totalPuntos -= 2
-        if diccionarioCaracteristicas['constitución'] == 11:
-            totalPuntos -= 3 
-        if diccionarioCaracteristicas['constitución'] == 12:
-            totalPuntos -= 4
-        if diccionarioCaracteristicas['constitución'] == 13:
-            totalPuntos -= 5
-        if diccionarioCaracteristicas['constitución'] == 14:
-            totalPuntos -= 7
-        if diccionarioCaracteristicas['constitución'] == 15:
-            totalPuntos -= 9        
-    if compra.lower() == 'carisma':
-        diccionarioCaracteristicas['carisma'] = diccionarioCaracteristicas['inteligencia'] + 1
-        totalPuntos -=1
-        if diccionarioCaracteristicas['carisma'] == 10:
-            totalPuntos -= 2
-        if diccionarioCaracteristicas['carisma'] == 11:
-            totalPuntos -= 3 
-        if diccionarioCaracteristicas['carisma'] == 12:
-            totalPuntos -= 4
-        if diccionarioCaracteristicas['carisma'] == 13:
-            totalPuntos -= 5
-        if diccionarioCaracteristicas['carisma'] == 14:
-            totalPuntos -= 7
-        if diccionarioCaracteristicas['carisma'] == 15:
-            totalPuntos -= 9 
+    compra = compra.lower()
+
+    if compra in diccionarioCaracteristicas and totalPuntos > 0:
+        if diccionarioCaracteristicas[compra] < 15:
+            diccionarioCaracteristicas[compra] += 1
+            totalPuntos -= 1
+            if diccionarioCaracteristicas[compra] in [10, 11, 12, 13, 14]:
+                totalPuntos -= 1
+            elif diccionarioCaracteristicas[compra] == 15:
+                totalPuntos -= 2
+        else:
+            print("Ya has asignado el valor máximo a esta característica.")
+    else:
+        print("Característica no válida o no tienes suficientes puntos para asignar.")
+        
+        
 print('')
 print('****************************')
 print("Te has quedado sin puntos")
