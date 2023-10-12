@@ -167,9 +167,10 @@ while totalPuntos != 0 or totalPuntos < 0:
             totalPuntos -= 7
         if diccionarioCaracteristicas['carisma'] == 15:
             totalPuntos -= 9 
-
+print('')
+print('****************************')
 print("Te has quedado sin puntos")
-print("Tus estadisticas son: ")
+print("Tus estadisticas son (Bufos raciales añadidos): ")
 print('****************************')
 print('')
 if razaseleccionada.lower() == "dragonborn": 
@@ -195,9 +196,23 @@ elif razaseleccionada.lower() == "half-elf":
 else:
     print('INTELIGENCIA: ' + str(diccionarioCaracteristicas['inteligencia']))    
 
+if razaseleccionada.lower() == "elf":
+    print('SABIDURA: '+str(diccionarioCaracteristicas['sabiduria']+1))
+else:
+    print('SABIDURIA: '+ str(diccionarioCaracteristicas['sabiduria']))
 
-print('SABIDURIA: '+ str(diccionarioCaracteristicas['sabiduria']))
-print('CARISMA: '+ str(diccionarioCaracteristicas['carisma']))
-print('CONSTITUCIÓN: '+ str(diccionarioCaracteristicas['constitución']))
+if razaseleccionada.lower() == "tiefling":
+    print('CARISMA: '+str(diccionarioCaracteristicas['carisma']+2))
+elif razaseleccionada.lower() == "halfling":
+    print('CARISMA: '+str(diccionarioCaracteristicas['carisma']+1))
+else:    
+    print('CARISMA: '+ str(diccionarioCaracteristicas['carisma']))
+    
+if razaseleccionada.lower() == "dwarf":
+    print('CONSTITUCIÓN: '+str(diccionarioCaracteristicas['constitución']+2))
+elif razaseleccionada.lower() == "dragonborn":
+    print('CONSTITUCIÓN: '+str(diccionarioCaracteristicas['constitución']+1))
+else:        
+    print('CONSTITUCIÓN: '+ str(diccionarioCaracteristicas['constitución']))
 print('')
 print('****************************')
