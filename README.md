@@ -11,7 +11,8 @@ Para ejecutar este generador de personajes de D&D, necesitas tener Python 3 en t
 1. Clona este repositorio en tu sistema o descarga el archivo `generador_personajes_dnd.py`.
 2. Asegúrate de tener Python 3 instalado.
 3. Abre una terminal y navega al directorio donde se encuentra el archivo `generador_personajes_dnd.py`.
-4. Ejecuta el script usando el siguiente comando:
+4. Ejecuta pip install -r requirements.txt
+5. Ejecuta el script usando el siguiente comando:
 
    ```shell
    python3 generador_personajes_dnd.py
